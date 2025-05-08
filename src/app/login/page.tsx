@@ -15,11 +15,8 @@ export default function login() {
             const response = await axios.post('/api/users/login', user);
             console.log(response);
             if (response.data.success) {
-                alert("Login successfully.");
-                router.push("/profile");
-            }
-            else {
-                console.log("Error in success");
+                alert("login succesfully");
+                router.push('/profile');
             }
         }
         catch (error) {
