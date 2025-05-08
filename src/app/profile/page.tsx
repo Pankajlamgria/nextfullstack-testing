@@ -1,7 +1,15 @@
 'use client';
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 import axios from "axios";
 export default function profile() {
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await axios.get('/api/users/me');
+            console.log(data);
+        }
+        fetchData();
+    }, [])
     const router = useRouter();
     const handleLogout = async () => {
         const result = await axios.get('/api/users/logout');

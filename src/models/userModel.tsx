@@ -1,5 +1,4 @@
 import mongoose, { model } from "mongoose";
-import { verify } from "node:crypto";
 const userSchema = new mongoose.Schema({
     username: { type: String, required: [true, 'provide a username'], unique: true },
     email: { type: String, required: true, unique: true },
